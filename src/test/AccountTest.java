@@ -1,5 +1,7 @@
 package test;
 
+import main.Account;
+
 public class AccountTest {
 
     public void testAccount() throws Exception {
