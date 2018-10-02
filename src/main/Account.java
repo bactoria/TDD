@@ -12,4 +12,7 @@ public class Account {
         return this.balance;
     }
 
+    public void deposit(int i) {
+        this.balance += i;
+    }
 }
