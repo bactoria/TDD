@@ -15,4 +15,8 @@ public class Account {
     public void deposit(int money) {
         this.balance += money;
     }
+
+    public void withdraw(int i) {
+        this.balance -= i;
+    }
 }
