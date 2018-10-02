@@ -31,4 +31,11 @@ public class AccountTest {
         assertEquals(11000, account.getBalance());
     }
 
+    @Test
+    public void testWithdraw() throws Exception {
+        Account account = new Account(10000);
+        account.withdraw(1000);
+        assertEquals(9000, account.getBalance());
+    }
+
 }
