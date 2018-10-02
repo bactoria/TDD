@@ -3,7 +3,7 @@ package test;
 import main.Account;
 import org.junit.Test;
 
-import static org.junit.Assert.fail;
+import static org.junit.Assert.assertEquals;
 
 public class AccountTest {
 
@@ -15,19 +15,13 @@ public class AccountTest {
     @Test
     public void testGetBalance() throws Exception {
         Account account = new Account(10000);
-        if (account.getBalance() != 10000) {
-            fail("getBalance() => " + account.getBalance());
-        }
+        assertEquals("10000원으로 계좌 생성 후 잔고 조회", 10000, account.getBalance());
 
         account = new Account(1000);
-        if (account.getBalance() != 1000) {
-            fail("getBalance() => " + account.getBalance());
-        }
+        assertEquals("1000원으로 계좌 생성 후 잔고 조회", 1000, account.getBalance());
 
         account = new Account(100);
-        if (account.getBalance() != 100) {
-            fail("getBalance() => " + account.getBalance());
-        }
+        assertEquals("100원으로 계좌 생성 후 잔고 조회", 100, account.getBalance());
     }
 
 }
