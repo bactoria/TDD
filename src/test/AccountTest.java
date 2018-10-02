@@ -24,4 +24,11 @@ public class AccountTest {
         assertEquals("100원으로 계좌 생성 후 잔고 조회", 100, account.getBalance());
     }
 
+    @Test
+    public void testDeposit() throws Exception {
+        Account account = new Account(10000);
+        account.deposit(1000);
+        assertEquals(11000, account.getBalance());
+    }
+
 }
