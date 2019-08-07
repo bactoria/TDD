@@ -7,12 +7,12 @@ package me.bactoria.chapter1.money;
 
 public class Doller extends Money{
 
-    public Doller(int amount) {
-        this.amount = amount;
+    public Doller(int amount, String currency) {
+        super(amount, currency);
     }
 
     @Override
     Money times(int multiplier) {
-        return new Doller(this.amount * multiplier);
+        return Money.doller(this.amount * multiplier);
     }
 }

@@ -8,13 +8,19 @@ package me.bactoria.chapter1.money;
 public abstract class Money {
 
     protected int amount;
+    protected String currency;
+
+    public Money(int amount, String currency) {
+        this.amount = amount;
+        this.currency = currency;
+    }
 
     public static Money doller(int amount) {
-        return new Doller(amount);
+        return new Doller(amount, "USD");
     }
 
     public static Money franc(int amount) {
-        return new Franc(amount);
+        return new Franc(amount, "CHF");
     }
 
     abstract Money times(int multiplier);
@@ -27,4 +33,7 @@ public abstract class Money {
         return amount == money.amount;
     }
 
+    public String currency() {
+        return this.currency;
+    }
 }
