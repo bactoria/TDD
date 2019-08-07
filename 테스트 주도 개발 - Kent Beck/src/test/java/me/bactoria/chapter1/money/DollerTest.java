@@ -28,4 +28,12 @@ public class DollerTest {
         result = fiveDoller.times(3);
         assertThat(result.amount).isEqualTo(15);
     }
+
+    @Test
+    public void Doller의_값이_같으면_동치이다() {
+        Doller doller1 = new Doller(5);
+        Doller doller2 = new Doller(5);
+
+        assertThat(doller1).isEqualTo(doller2);
+    }
 }
