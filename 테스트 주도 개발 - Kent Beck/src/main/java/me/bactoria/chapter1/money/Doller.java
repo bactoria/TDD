@@ -9,7 +9,7 @@ import java.util.Objects;
 
 public class Doller {
 
-    int amount;
+    private int amount;
 
     public Doller(int amount) {
         this.amount = amount;
