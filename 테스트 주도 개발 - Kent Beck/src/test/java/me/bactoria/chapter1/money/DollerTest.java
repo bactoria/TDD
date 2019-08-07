@@ -24,10 +24,10 @@ public class DollerTest {
         Doller fiveDoller = new Doller(5);
 
         Doller result = fiveDoller.times(2);
-        assertThat(result.amount).isEqualTo(10);
+        assertThat(result.amount).isEqualTo(new Doller(10).amount);
 
         result = fiveDoller.times(3);
-        assertThat(result.amount).isEqualTo(15);
+        assertThat(result.amount).isEqualTo(new Doller(15).amount);
     }
 
     @Test
