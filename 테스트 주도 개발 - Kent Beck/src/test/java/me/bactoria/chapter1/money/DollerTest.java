@@ -17,4 +17,15 @@ public class DollerTest {
         fiveDoller.times(2);
         assertThat(fiveDoller.amount).isEqualTo(10);
     }
+
+    @Test
+    public void Doller는_재사용이_가능하다() {
+        Doller fiveDoller = new Doller(5);
+
+        fiveDoller.times(2);
+        assertThat(fiveDoller.amount).isEqualTo(10);
+
+        fiveDoller.times(3);
+        assertThat(fiveDoller.amount).isEqualTo(15);
+    }
 }
