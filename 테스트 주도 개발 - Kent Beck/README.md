@@ -22,3 +22,5 @@ Money 클래스를 리팩토링하던 과정이 기억이 안나서 코드를 �
 5. Money 반올림?
 6. ~~equals()~~
 7. hashCode()
+8. Equal null
+9. Equal object
