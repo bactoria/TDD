@@ -1,0 +1,21 @@
+package me.bactoria.chapter1.money;
+
+import org.junit.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+/**
+ * @author Bactoria
+ * @since 2019-08-08 [2019.8월.08]
+ */
+
+public class MoneyTest {
+
+    @Test
+    public void Doller와_Franc_동치_비교() {
+        Money fiveDoller = new Doller(5);
+        Money fiveFranc = new Franc(5);
+
+        assertThat(fiveDoller).isNotEqualTo(fiveFranc);
+    }
+}
