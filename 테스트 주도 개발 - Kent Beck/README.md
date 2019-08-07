@@ -24,7 +24,7 @@ Money 클래스를 리팩토링하던 과정이 기억이 안나서 코드를 �
 7. hashCode()
 8. ~~5CHF * 2 = 10CHF(프랑)~~
 9. Dollar/Franc 중복
-10. 공용 equals
+10. ~~공용 equals~~
 11. 공용 times
 
 

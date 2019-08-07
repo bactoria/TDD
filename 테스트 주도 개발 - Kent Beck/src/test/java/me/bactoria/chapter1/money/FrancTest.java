@@ -17,4 +17,14 @@ public class FrancTest {
         Franc result = fiveFranc.times(2);
         assertThat(result).isEqualTo(new Franc(10));
     }
+
+    @Test
+    public void Franc_동등성_검사() {
+
+        Money money = new Franc(5);
+
+        assertThat(money).isEqualTo(new Franc(5));
+        assertThat(money).isNotEqualTo(new Franc(6));
+
+    }
 }
