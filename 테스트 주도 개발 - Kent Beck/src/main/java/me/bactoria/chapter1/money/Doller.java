@@ -10,9 +10,4 @@ public class Doller extends Money{
     public Doller(int amount, String currency) {
         super(amount, currency);
     }
-
-    @Override
-    Money times(int multiplier) {
-        return Money.doller(this.amount * multiplier);
-    }
 }

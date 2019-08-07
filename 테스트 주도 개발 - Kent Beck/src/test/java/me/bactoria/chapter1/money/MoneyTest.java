@@ -27,4 +27,12 @@ public class MoneyTest {
         assertThat(doller.currency()).isEqualTo("USD");
         assertThat(franc.currency()).isEqualTo("CHF");
     }
+
+    @Test
+    public void doller와_money의_통화와_값이_같다면_동치이다() {
+        Money five = Money.doller(5);
+        Money tenDoller= Money.doller(10);
+
+        assertThat(five.times(2)).isEqualTo(tenDoller);
+    }
 }
