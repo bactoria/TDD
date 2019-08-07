@@ -21,7 +21,7 @@ public class FrancTest {
     @Test
     public void Franc_동등성_검사() {
 
-        Money money = new Franc(5);
+        Franc money = new Franc(5);
 
         assertThat(money).isEqualTo(new Franc(5));
         assertThat(money).isNotEqualTo(new Franc(6));

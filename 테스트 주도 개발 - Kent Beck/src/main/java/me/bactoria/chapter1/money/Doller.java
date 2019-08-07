@@ -11,7 +11,8 @@ public class Doller extends Money{
         this.amount = amount;
     }
 
-    Doller times(int multiplier) {
+    @Override
+    Money times(int multiplier) {
         return new Doller(this.amount * multiplier);
     }
 }

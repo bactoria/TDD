@@ -5,9 +5,11 @@ package me.bactoria.chapter1.money;
  * @since 2019-08-07 [2019.8월.07]
  */
 
-public class Money {
+public abstract class Money {
 
     protected int amount;
+
+    abstract Money times(int multiplier);
 
     @Override
     public boolean equals(Object o) {
