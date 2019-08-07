@@ -13,27 +13,27 @@ public class DollerTest {
 
     @Test
     public void Doller는_곱셈이_가능하다() {
-        Money fiveDoller = new Doller(5);
+        Money fiveDoller = Money.doller(5);
 
         Money result = fiveDoller.times(2);
-        assertThat(result).isEqualTo(new Doller(10));
+        assertThat(result).isEqualTo(Money.doller(10));
     }
 
     @Test
     public void Doller는_재사용이_가능하다() {
-        Money fiveDoller = new Doller(5);
+        Money fiveDoller = Money.doller(5);
 
         Money result = fiveDoller.times(2);
-        assertThat(result).isEqualTo(new Doller(10));
+        assertThat(result).isEqualTo(Money.doller(10));
 
         result = fiveDoller.times(3);
-        assertThat(result).isEqualTo(new Doller(15));
+        assertThat(result).isEqualTo(Money.doller(15));
     }
 
     @Test
     public void Doller의_값이_같으면_동치이다() {
-        Money doller1 = new Doller(5);
-        Money doller2 = new Doller(5);
+        Money doller1 = Money.doller(5);
+        Money doller2 = Money.doller(5);
 
         assertThat(doller1).isEqualTo(doller2);
     }

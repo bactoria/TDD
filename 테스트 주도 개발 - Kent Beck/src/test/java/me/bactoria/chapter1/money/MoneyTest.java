@@ -13,8 +13,8 @@ public class MoneyTest {
 
     @Test
     public void Doller와_Franc_동치_비교() {
-        Money fiveDoller = new Doller(5);
-        Money fiveFranc = new Franc(5);
+        Money fiveDoller = Money.doller(5);
+        Money fiveFranc = Money.franc(5);
 
         assertThat(fiveDoller).isNotEqualTo(fiveFranc);
     }

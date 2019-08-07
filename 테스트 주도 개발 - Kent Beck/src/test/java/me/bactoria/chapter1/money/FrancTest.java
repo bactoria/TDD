@@ -13,18 +13,17 @@ public class FrancTest {
 
     @Test
     public void Franc은_곱셈이_가능하다() {
-        Franc fiveFranc = new Franc(5);
-        Franc result = fiveFranc.times(2);
-        assertThat(result).isEqualTo(new Franc(10));
+        Money fiveFranc = Money.franc(5);
+        Money result = fiveFranc.times(2);
+
+        assertThat(result).isEqualTo(Money.franc(10));
     }
 
     @Test
     public void Franc_동등성_검사() {
+        Money money = Money.franc(5);
 
-        Franc money = new Franc(5);
-
-        assertThat(money).isEqualTo(new Franc(5));
-        assertThat(money).isNotEqualTo(new Franc(6));
-
+        assertThat(money).isEqualTo(Money.franc(5));
+        assertThat(money).isNotEqualTo(Money.franc(6));
     }
 }

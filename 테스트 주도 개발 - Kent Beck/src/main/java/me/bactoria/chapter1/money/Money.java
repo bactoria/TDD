@@ -9,6 +9,14 @@ public abstract class Money {
 
     protected int amount;
 
+    public static Money doller(int amount) {
+        return new Doller(amount);
+    }
+
+    public static Money franc(int amount) {
+        return new Franc(amount);
+    }
+
     abstract Money times(int multiplier);
 
     @Override
