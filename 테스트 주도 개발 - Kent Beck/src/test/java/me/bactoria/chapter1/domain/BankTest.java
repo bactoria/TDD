@@ -18,4 +18,14 @@ public class BankTest {
 
         assertThat(result).isEqualTo(Money.doller(1));
     }
+
+    @Test
+    public void 다른_통화끼리도_reduce_할수있다() {
+        Bank bank = new Bank();
+        bank.addRate("CHF", "USD", 2);
+
+        Money result = bank.reduce(Money.franc(2), "USD");
+
+        assertThat(Money.doller(1)).isEqualTo(result);
+    }
 }
