@@ -7,6 +7,11 @@ package me.bactoria.chapter1.domain;
 
 public class Bank {
     Money reduce (Expression source, String to) {
-        return Money.doller(10);
+        if( source instanceof Money) {
+            return (Money) source;
+        }
+
+        Sum sum = (Sum) source;
+        return sum.reduce(to);
     }
 }

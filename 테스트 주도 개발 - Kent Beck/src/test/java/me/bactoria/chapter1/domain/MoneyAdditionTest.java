@@ -14,7 +14,7 @@ public class MoneyAdditionTest {
     @Test
     public void 덧셈_테스트() {
         Money five = Money.doller(5);
-        Expression sum = five.plus(five);
+        Expression sum = new Sum(five, five);
 
         Bank bank = new Bank();
         Money reduced = bank.reduce(sum, "USD");

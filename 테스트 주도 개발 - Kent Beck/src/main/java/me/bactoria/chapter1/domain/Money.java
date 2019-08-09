@@ -29,11 +29,8 @@ public class Money implements Expression {
         return new Money(this.amount * multiplier, this.currency);
     }
 
-    Expression plus(Money money) {
-        if(this.currency != money.currency) {
-            throw new RuntimeException();
-        }
-        return new Money(this.amount + money.amount, this.currency);
+    Expression plus(Money addend) {
+        return new Sum(this, addend);
     }
 
     @Override
@@ -47,5 +44,10 @@ public class Money implements Expression {
 
     public String currency() {
         return this.currency;
+    }
+
+    @Override
+    public Money reduce(String to) {
+        return this;
     }
 }
