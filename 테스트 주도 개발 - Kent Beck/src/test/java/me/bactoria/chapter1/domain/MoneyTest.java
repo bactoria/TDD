@@ -1,4 +1,4 @@
-package me.bactoria.chapter1.money;
+package me.bactoria.chapter1.domain;
 
 import org.junit.Test;
 

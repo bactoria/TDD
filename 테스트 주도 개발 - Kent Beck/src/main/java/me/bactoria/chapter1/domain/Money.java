@@ -1,4 +1,4 @@
-package me.bactoria.chapter1.money;
+package me.bactoria.chapter1.domain;
 
 import java.util.Objects;
 
@@ -7,7 +7,7 @@ import java.util.Objects;
  * @since 2019-08-07 [2019.8월.07]
  */
 
-public class Money {
+public class Money implements Expression {
 
     protected int amount;
     protected String currency;
@@ -27,6 +27,13 @@ public class Money {
 
     Money times(int multiplier) {
         return new Money(this.amount * multiplier, this.currency);
+    }
+
+    Expression plus(Money money) {
+        if(this.currency != money.currency) {
+            throw new RuntimeException();
+        }
+        return new Money(this.amount + money.amount, this.currency);
     }
 
     @Override

@@ -23,10 +23,11 @@ Money 클래스를 리팩토링하던 과정이 기억이 안나서 코드를 �
 6. ~~equals()~~
 7. hashCode()
 8. ~~5CHF * 2 = 10CHF(프랑)~~
-9. ~~Dollar/Franc 제거~~
+9. ~~Dollar/Franc 클래스 제거~~
 10. ~~공용 equals~~
 11. ~~공용 times~~
 12. ~~Franc과 Doller 비교하기~~
 13. ~~변수 타입을 Money 로 변경하기~~
 14. ~~팩토리 메서드 도입~~
 15. ~~통화(currency) 추가~~
+16. $5 + $5 = $10
