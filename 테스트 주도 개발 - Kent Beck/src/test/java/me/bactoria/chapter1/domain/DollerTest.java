@@ -15,7 +15,7 @@ public class DollerTest {
     public void Doller는_곱셈이_가능하다() {
         Money fiveDoller = Money.doller(5);
 
-        Money result = fiveDoller.times(2);
+        Expression result = fiveDoller.times(2);
         assertThat(result).isEqualTo(Money.doller(10));
     }
 
@@ -23,7 +23,7 @@ public class DollerTest {
     public void Doller는_재사용이_가능하다() {
         Money fiveDoller = Money.doller(5);
 
-        Money result = fiveDoller.times(2);
+        Expression result = fiveDoller.times(2);
         assertThat(result).isEqualTo(Money.doller(10));
 
         result = fiveDoller.times(3);

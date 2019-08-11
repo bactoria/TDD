@@ -22,4 +22,16 @@ public class MoneyAdditionTest {
         assertThat(reduced).isEqualTo(Money.doller(10));
     }
 
+    @Test
+    public void 통화가_다른_Money_덧셈_테스트() {
+        Expression fiveBucks = Money.doller(5);
+        Expression tenFrances = Money.franc(10);
+        Bank bank = new Bank();
+        bank.addRate("CHF", "USD", 2);
+
+        Money result = bank.reduce(fiveBucks.plus(tenFrances), "USD");
+
+        assertThat(result).isEqualTo(Money.doller(10));
+    }
+
 }

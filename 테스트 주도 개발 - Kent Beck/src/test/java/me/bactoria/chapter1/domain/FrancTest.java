@@ -14,7 +14,7 @@ public class FrancTest {
     @Test
     public void Franc은_곱셈이_가능하다() {
         Money fiveFranc = Money.franc(5);
-        Money result = fiveFranc.times(2);
+        Expression result = fiveFranc.times(2);
 
         assertThat(result).isEqualTo(Money.franc(10));
     }
