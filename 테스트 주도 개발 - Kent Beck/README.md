@@ -33,3 +33,4 @@ Money 클래스를 리팩토링하던 과정이 기억이 안나서 코드를 �
 16. ~~$5 + $5 = $10~~
 17. ~~Bank.reduce(Money)~~
 18. ~~Money에 대한 통화 변환을 수행하는 Reduce~~
+19. ~~Expression.times~~
