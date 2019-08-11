@@ -44,6 +44,11 @@ public class Money implements Expression {
                 Objects.equals(currency, money.currency);
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(amount, currency);
+    }
+
     public String currency() {
         return this.currency;
     }

@@ -21,7 +21,7 @@ Money 클래스를 리팩토링하던 과정이 기억이 안나서 코드를 �
 4. ~~Doller 부작용 (side effect)?~~
 5. Money 반올림?
 6. ~~equals()~~
-7. hashCode()
+7. ~~hashCode()~~
 8. ~~5CHF * 2 = 10CHF(프랑)~~
 9. ~~Dollar/Franc 클래스 제거~~
 10. ~~공용 equals~~
