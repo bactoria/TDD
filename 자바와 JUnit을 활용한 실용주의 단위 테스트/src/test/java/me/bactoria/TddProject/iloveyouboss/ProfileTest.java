@@ -1,5 +1,6 @@
 package me.bactoria.TddProject.iloveyouboss;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;
@@ -12,11 +13,25 @@ import static org.junit.Assert.assertTrue;
 
 public class ProfileTest {
 
+    private Profile profile;
+    private BooleanQuestion questionIsThereRelocation;
+    private Answer answerThereIsRelocation;
+
+    @Before
+    public void setUp() {
+        profile = new Profile();
+    }
+
+    @Before
+    public void createQuestion() {
+        questionIsThereRelocation = new BooleanQuestion(1, "Relocation package?");
+        answerThereIsRelocation = new Answer(questionIsThereRelocation, Bool.TRUE);
+
+    }
+
     @Test
     public void matchesNothingWhenProfileEmpty() {
-        Profile profile = new Profile();
-        Question question = new BooleanQuestion(1, "Relocation package?");
-        Criterion criterion = new Criterion(new Answer(question, Bool.TRUE), Weight.DontCare);
+        Criterion criterion = new Criterion(new Answer(questionIsThereRelocation, Bool.TRUE), Weight.DontCare);
 
         boolean result = profile.matches(criterion);
 
@@ -25,11 +40,8 @@ public class ProfileTest {
 
     @Test
     public void matchesWhenProfileContainsMatchingAnswer() {
-        Profile profile = new Profile();
-        Question question = new BooleanQuestion(1, "Relocation package?");
-        Criterion criterion = new Criterion(new Answer(question, Bool.TRUE), Weight.Important);
-        Answer answer = new Answer(question, Bool.TRUE);
-        profile.add(answer);
+        profile.add(answerThereIsRelocation);
+        Criterion criterion = new Criterion(answerThereIsRelocation, Weight.Important);
 
         boolean result = profile.matches(criterion);
 
