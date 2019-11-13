@@ -8,7 +8,7 @@
 ***/
 package me.bactoria.TddProject.scratch;
 
-import iloveyouboss.*;
+import me.bactoria.TddProject.iloveyouboss.BearingOutOfRangeException;
 
 public class Bearing {
    public static final int MAX = 359;

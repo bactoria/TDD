@@ -6,4 +6,7 @@ package me.bactoria.TddProject.iloveyouboss;
  */
 
 public class Profile {
+    public boolean matches(Criterion criterion) {
+        return false;
+    }
 }
