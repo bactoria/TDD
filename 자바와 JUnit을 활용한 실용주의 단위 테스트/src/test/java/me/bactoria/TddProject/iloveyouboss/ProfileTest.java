@@ -14,6 +14,7 @@ import static org.junit.Assert.assertTrue;
 public class ProfileTest {
 
     private Profile profile;
+    private Criteria criteria;
     private BooleanQuestion questionIsThereRelocation;
     private BooleanQuestion questionReimbursesTuition;
     private Answer answerThereIsRelocation;
@@ -24,6 +25,11 @@ public class ProfileTest {
     @Before
     public void setUp() {
         profile = new Profile();
+    }
+
+    @Before
+    public void createCriteria() {
+        criteria = new Criteria();
     }
 
     @Before
@@ -82,7 +88,6 @@ public class ProfileTest {
     @Test
     public void doesNotMatchWhenNoneOfMultipleCriteriaMatch() {
         profile.add(answerDoesNotReimburseTuition);
-        Criteria criteria = new Criteria();
         criteria.add(new Criterion(answerThereIsRelocation, Weight.Important));
         criteria.add(new Criterion(answerReimbursesTuition, Weight.Important));
 
@@ -94,7 +99,6 @@ public class ProfileTest {
     @Test
     public void matchWhenAnyOfMultipleCriteriaMatch() {
         profile.add(answerThereIsRelocation);
-        Criteria criteria = new Criteria();
         criteria.add(new Criterion(answerThereIsRelocation, Weight.Important));
         criteria.add(new Criterion(answerReimbursesTuition, Weight.Important));
 
