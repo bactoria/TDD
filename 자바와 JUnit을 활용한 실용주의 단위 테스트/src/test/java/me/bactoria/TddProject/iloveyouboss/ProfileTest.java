@@ -46,15 +46,6 @@ public class ProfileTest {
     }
 
     @Test
-    public void matchesNothingWhenProfileEmpty() {
-        Criterion criterion = new Criterion(new Answer(questionIsThereRelocation, Bool.TRUE), Weight.DontCare);
-
-        boolean result = profile.matches(criterion);
-
-        assertFalse(result);
-    }
-
-    @Test
     public void matchesWhenProfileContainsMatchingAnswer() {
         profile.add(answerThereIsRelocation);
         Criterion criterion = new Criterion(answerThereIsRelocation, Weight.Important);
