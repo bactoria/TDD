@@ -19,6 +19,7 @@ public class ProfileTest {
     private Answer answerThereIsRelocation;
     private Answer answerThereIsNotRelocation;
     private Answer answerDoesNotReimburseTuition;
+    private Answer answerReimbursesTuition;
 
     @Before
     public void setUp() {
@@ -34,6 +35,8 @@ public class ProfileTest {
         questionReimbursesTuition = new BooleanQuestion(1, "Reimburses tuition?");
         answerDoesNotReimburseTuition =
                 new Answer(questionReimbursesTuition, Bool.FALSE);
+        answerReimbursesTuition =
+                new Answer(questionReimbursesTuition, Bool.TRUE);
     }
 
     @Test
@@ -74,6 +77,18 @@ public class ProfileTest {
         boolean result = profile.matches(criterion);
 
         assertTrue(result);
+    }
+
+    @Test
+    public void doesNotMatchWhenNoneOfMultipleCriteriaMatch() {
+        profile.add(answerDoesNotReimburseTuition);
+        Criteria criteria = new Criteria();
+        criteria.add(new Criterion(answerThereIsRelocation, Weight.Important));
+        criteria.add(new Criterion(answerReimbursesTuition, Weight.Important));
+
+        boolean result = profile.matches(criteria);
+
+        assertFalse(result);
     }
 
 }
