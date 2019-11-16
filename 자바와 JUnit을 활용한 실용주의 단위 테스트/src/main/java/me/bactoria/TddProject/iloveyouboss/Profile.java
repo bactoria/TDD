@@ -12,12 +12,15 @@ public class Profile {
     private Map<String, Answer> answers = new HashMap<>();
 
     public boolean matches(Criteria criteria) {
+        boolean matches = false;
         for (Criterion criterion: criteria) {
             if (matches(criterion)) {
-                return true;
+                matches = true;
+            } else if (criterion.getWeight() == Weight.MustMatch) {
+                return false;
             }
         }
-        return false;
+        return matches;
     }
 
     public boolean matches(Criterion criterion) {
