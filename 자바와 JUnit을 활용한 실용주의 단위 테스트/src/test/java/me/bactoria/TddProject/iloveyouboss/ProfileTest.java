@@ -107,4 +107,15 @@ public class ProfileTest {
         assertTrue(result);
     }
 
+    @Test
+    public void doesNotMatchWhenAnyMustMeetCriteriaNotMet() {
+        profile.add(answerThereIsRelocation);
+        criteria.add(new Criterion(answerThereIsRelocation, Weight.Important));
+        criteria.add(new Criterion(answerReimbursesTuition, Weight.MustMatch));
+
+        boolean result = profile.matches(criteria);
+
+        assertFalse(result);
+    }
+
 }
