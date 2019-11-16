@@ -15,8 +15,10 @@ public class ProfileTest {
 
     private Profile profile;
     private BooleanQuestion questionIsThereRelocation;
+    private BooleanQuestion questionReimbursesTuition;
     private Answer answerThereIsRelocation;
     private Answer answerThereIsNotRelocation;
+    private Answer answerDoesNotReimburseTuition;
 
     @Before
     public void setUp() {
@@ -28,6 +30,10 @@ public class ProfileTest {
         questionIsThereRelocation = new BooleanQuestion(1, "Relocation package?");
         answerThereIsRelocation = new Answer(questionIsThereRelocation, Bool.TRUE);
         answerThereIsNotRelocation = new Answer(questionIsThereRelocation, Bool.FALSE);
+
+        questionReimbursesTuition = new BooleanQuestion(1, "Reimburses tuition?");
+        answerDoesNotReimburseTuition =
+                new Answer(questionReimbursesTuition, Bool.FALSE);
     }
 
     @Test
@@ -58,4 +64,16 @@ public class ProfileTest {
 
         assertFalse(result);
     }
+
+    @Test
+    public void matchesWhenContainsMultipleAnswers() {
+        profile.add(answerThereIsRelocation);
+        profile.add(answerDoesNotReimburseTuition);
+        Criterion criterion = new Criterion(answerThereIsRelocation, Weight.Important);
+
+        boolean result = profile.matches(criterion);
+
+        assertTrue(result);
+    }
+
 }
