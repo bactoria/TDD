@@ -11,6 +11,10 @@ import java.util.Map;
 public class Profile {
     private Map<String, Answer> answers = new HashMap<>();
 
+    public boolean matches(Criteria criteria) {
+        return false;
+    }
+
     public boolean matches(Criterion criterion) {
         Answer answer = getMatchingProfileAnswer(criterion);
         return criterion.getAnswer().match(answer);
