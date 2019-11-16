@@ -12,6 +12,11 @@ public class Profile {
     private Map<String, Answer> answers = new HashMap<>();
 
     public boolean matches(Criteria criteria) {
+        for (Criterion criterion: criteria) {
+            if (matches(criterion)) {
+                return true;
+            }
+        }
         return false;
     }
 
