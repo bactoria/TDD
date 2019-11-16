@@ -91,4 +91,16 @@ public class ProfileTest {
         assertFalse(result);
     }
 
+    @Test
+    public void matchWhenAnyOfMultipleCriteriaMatch() {
+        profile.add(answerThereIsRelocation);
+        Criteria criteria = new Criteria();
+        criteria.add(new Criterion(answerThereIsRelocation, Weight.Important));
+        criteria.add(new Criterion(answerReimbursesTuition, Weight.Important));
+
+        boolean result = profile.matches(criteria);
+
+        assertTrue(result);
+    }
+
 }
