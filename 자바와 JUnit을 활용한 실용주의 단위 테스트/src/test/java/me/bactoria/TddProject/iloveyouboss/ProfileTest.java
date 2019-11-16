@@ -118,4 +118,13 @@ public class ProfileTest {
         assertFalse(result);
     }
 
+    @Test
+    public void matchesWhenCriterionIsDontCare() {
+        profile.add(answerDoesNotReimburseTuition);
+        Criterion criterion = new Criterion(answerReimbursesTuition, Weight.DontCare);
+
+        boolean result = profile.matches(criterion);
+
+        assertTrue(result);
+    }
 }
